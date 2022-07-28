@@ -36,6 +36,84 @@ class _ConditionalsState extends State<Conditionals> {
             ),
             decoration: reUse.boxDecoration(),
           ),
+          Container(
+            height: SizeConfig.screenHeight*.4,
+            padding: EdgeInsets.all(10),
+            child: Image.asset(
+              'images/conditional.JPG',
+              fit: BoxFit.fill,
+            ),
+            decoration: reUse.boxDecoration(),
+          ),
+          Container(
+            height: SizeConfig.screenHeight*.1,
+            padding: EdgeInsets.all(10),
+            child: Text(
+              'if-elseif-else',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.underline
+              ),
+            ),
+            decoration: reUse.boxDecoration(),
+          ),
+          Container(
+            height: SizeConfig.screenHeight*.4,
+            padding: EdgeInsets.all(10),
+            child: Image.asset(
+              'images/conditional1.png',
+              fit: BoxFit.fill,
+            ),
+            decoration: reUse.boxDecoration(),
+          ),
+          Container(
+            height: SizeConfig.screenHeight*.1,
+            padding: EdgeInsets.all(10),
+            child: Text(
+              'if-else using switch',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.underline
+              ),
+            ),
+            decoration: reUse.boxDecoration(),
+          ),
+          Container(
+            height: SizeConfig.screenHeight*.4,
+            padding: EdgeInsets.all(10),
+            child: Image.asset(
+              'images/switch.png',
+              fit: BoxFit.fill,
+            ),
+            decoration: reUse.boxDecoration(),
+          ),
+          Container(
+            height: SizeConfig.screenHeight*.1,
+            padding: EdgeInsets.all(10),
+            child: Text(
+              'if-elseif-else using switch',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.underline
+              ),
+            ),
+            decoration: reUse.boxDecoration(),
+          ),
+          Container(
+            height: SizeConfig.screenHeight*.4,
+            padding: EdgeInsets.all(10),
+            child: Image.asset(
+              'images/switch1.png',
+              fit: BoxFit.fill,
+            ),
+            decoration: reUse.boxDecoration(),
+          ),
         ],
       )
     );

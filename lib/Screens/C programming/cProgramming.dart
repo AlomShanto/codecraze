@@ -1,12 +1,16 @@
 import 'package:codecraze/Screens/C%20programming/Introduction.dart';
+import 'package:codecraze/Screens/C%20programming/array.dart';
 import 'package:codecraze/Screens/C%20programming/conditionals.dart';
 import 'package:codecraze/Screens/C%20programming/data_types.dart';
 import 'package:codecraze/Screens/C%20programming/header_files.dart';
 import 'package:codecraze/Screens/C%20programming/input_output.dart';
-import 'package:codecraze/assistant/contest_calculator.dart';
+import 'package:codecraze/Screens/C%20programming/loops.dart';
+import 'package:codecraze/Screens/C%20programming/strings.dart';
 import 'package:codecraze/assistant/reUsableCard.dart';
 import 'package:codecraze/assistant/size_config.dart';
 import 'package:flutter/material.dart';
+
+import 'function.dart';
 
 class BasicProgramming extends StatefulWidget {
   const BasicProgramming({Key? key}) : super(key: key);
@@ -100,6 +104,62 @@ class _BasicProgrammingState extends State<BasicProgramming> {
                 onTap: (){
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context)=>Conditionals())
+                  );
+                },
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: SizeConfig.screenWidth*.15, right: SizeConfig.screenWidth*.15,top: 10,bottom: 10),
+            child: Container(
+              height: SizeConfig.screenHeight*.1,
+              child: GestureDetector(
+                child: card.reUsableCard('Loops'),
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>Loops())
+                  );
+                },
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: SizeConfig.screenWidth*.15, right: SizeConfig.screenWidth*.15,top: 10,bottom: 10),
+            child: Container(
+              height: SizeConfig.screenHeight*.1,
+              child: GestureDetector(
+                child: card.reUsableCard('Array'),
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>Array())
+                  );
+                },
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: SizeConfig.screenWidth*.15, right: SizeConfig.screenWidth*.15,top: 10,bottom: 10),
+            child: Container(
+              height: SizeConfig.screenHeight*.1,
+              child: GestureDetector(
+                child: card.reUsableCard('String'),
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>Strings())
+                  );
+                },
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: SizeConfig.screenWidth*.15, right: SizeConfig.screenWidth*.15,top: 10,bottom: 10),
+            child: Container(
+              height: SizeConfig.screenHeight*.1,
+              child: GestureDetector(
+                child: card.reUsableCard('Functions'),
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>Functions())
                   );
                 },
               ),
