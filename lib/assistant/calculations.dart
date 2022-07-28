@@ -1,7 +1,8 @@
 import 'package:codecraze/model/get_all_submissions.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 
 class Calculation{
-    late List<Result>? results;
+    late RxList<Result>? results;
     Calculation({required this.results});
 
     late double accuracy,oneSubmit,avgAttemp;

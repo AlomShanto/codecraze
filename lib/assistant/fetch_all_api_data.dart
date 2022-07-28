@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:codecraze/assistant/helper.dart';
 import 'package:codecraze/model/get_all_contests.dart';
 import 'package:codecraze/model/get_all_submissions.dart';
+import 'package:codecraze/model/get_contest_list.dart';
 import 'package:codecraze/model/get_user_info.dart';
 import 'package:http/http.dart' as http;
 
@@ -48,6 +49,21 @@ class LoadAllApiData {
       // print(jsonDecode);
       //print(convertData);
       return getContestInfoFromJson(convertData);
+    }
+
+    return null;
+  }
+
+  static Future<GetContestList?> fetchContestListData() async {
+    var url = Uri.parse('https://codeforces.com/api/contest.list?gym=false');
+    var heroResponse = await http.get(url);
+    if (heroResponse.statusCode == 200) {
+      var jsonDecode = json.decode(heroResponse.body);
+      var convertData = json.encode(jsonDecode);
+      //print(heroResponse.body);
+      // print(jsonDecode);
+      //print(convertData);
+      return getContestListFromJson(convertData);
     }
 
     return null;

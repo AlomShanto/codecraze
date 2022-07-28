@@ -1,8 +1,11 @@
+import 'package:codecraze/Screens/Compare/search_compare_page.dart';
 import 'package:codecraze/Screens/Statistics/search_page.dart';
 import 'package:codecraze/assistant/calculations.dart';
 import 'package:codecraze/assistant/contest_calculator.dart';
+import 'package:codecraze/assistant/contest_list.dart';
 import 'package:codecraze/model/get_all_contests.dart';
 import 'package:codecraze/model/get_all_submissions.dart';
+import 'package:codecraze/model/get_contest_list.dart';
 import 'package:codecraze/model/get_user_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -12,19 +15,30 @@ import 'fetch_all_api_data.dart';
 class Controller{
 
   var loadingSubmissionList = true.obs;
+
   var loadingUserInfoList = true.obs;
+
   var loadingContestInfoList = true.obs;
+
+  var loadingContestList = true.obs;
 
   late Calculation cal;
   late ContestCalculator cCal;
+  late ContestList uCon;
 
   var dataSubmissionList = List<Result>.empty().obs;
+
   var dataUserInfoList = List<Result1>.empty().obs;
+
   var dataContestInfoList = List<Result2>.empty().obs;
+
+  var dataContestList = List<Result3>.empty().obs;
 
   void init(BuildContext context){
     getAllSubmissionsList();
+
     getUserInfoList();
+
     getContestInfoList();
   }
 
@@ -82,6 +96,26 @@ class Controller{
       print(e.toString()+" submission error");
     }finally{
       loadingContestInfoList(false).obs;
+    }
+  }
+
+  getContestIList() async{
+    try{
+      loadingContestList(true).obs;
+      dataContestList.clear();
+      var data = await LoadAllApiData.fetchContestListData();
+
+      if(data != null){
+        print("Contest data retrieved");
+        dataContestList.value = data.result;
+        uCon = new ContestList(result: dataContestList);
+        uCon.main();
+        print(dataContestList.length);
+      }
+    }catch(e){
+      print(e.toString()+" submission error");
+    }finally{
+      loadingContestList(false).obs;
     }
   }
 
