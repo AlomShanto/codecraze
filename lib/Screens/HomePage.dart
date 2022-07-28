@@ -1,5 +1,7 @@
 import 'package:codecraze/Screens/C%20programming/cProgramming.dart';
+import 'package:codecraze/Screens/Compare/search_compare_page.dart';
 import 'package:codecraze/Screens/Statistics/search_page.dart';
+import 'package:codecraze/Screens/upcoming_contest.dart';
 import 'package:codecraze/assistant/reUsableCard.dart';
 import 'package:codecraze/assistant/size_config.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +47,42 @@ class _HomePageState extends State<HomePage> {
                 onTap: (){
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context)=>SearchPage())
+                  );
+                },
+              )
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: SizeConfig.screenWidth*.15,
+              right: SizeConfig.screenWidth*.15,
+              bottom: 20,
+            ),
+            child: Container(
+                height: SizeConfig.screenHeight*.1,
+                child: GestureDetector(
+                  child: card.reUsableCard('Upcoming Codeforces contest'),
+                  onTap: (){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context)=>UpComingContestPage())
+                    );
+                  },
+                )
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: SizeConfig.screenWidth*.15,
+              right: SizeConfig.screenWidth*.15,
+              bottom: 20,
+            ),
+            child: Container(
+              height: SizeConfig.screenHeight*.1,
+              child: GestureDetector(
+                child: card.reUsableCard('Codeforces User Compare'),
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>Compare())
                   );
                 },
               )
